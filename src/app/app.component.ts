@@ -58,9 +58,9 @@ export class AppComponent implements OnInit {
             videoData.snippet.description
           );
         },
-        error: (error) => {
+        error: () => {
           this.isLoading.set(false);
-          console.error('Error fetching video details:', error);
+          this.error.set('Unable to fetch video details');
         },
       });
   }
@@ -81,9 +81,9 @@ export class AppComponent implements OnInit {
         );
         this.isLoading.set(false);
       })
-      .catch((error: any) => {
-        this.error = error;
+      .catch(() => {
         this.isLoading.set(false);
+        this.error.set('Unable to get response from Gemini AI model');
       });
   }
 
