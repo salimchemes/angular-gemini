@@ -5,7 +5,6 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { take } from 'rxjs';
-import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -20,12 +19,12 @@ export class AppComponent implements OnInit {
   error = signal<string | undefined>(undefined);
   isLoading = signal<boolean | undefined>(undefined);
   #genAI: GoogleGenerativeAI | undefined;
-  #youtubeApiKey: string = environment.YOUTUBE_API_KEY;
-  #geminiApiKey: string = environment.GEMINI_API_KEY;
+  #youtubeApiKey: string | undefined = import.meta.env.NG_APP_YOUTUBE_API_KEY;
+  #geminiApiKey: string | undefined = import.meta.env.NG_APP_GEMINI_API_KEY;
   #http = inject(HttpClient);
 
   ngOnInit() {
-    this.#genAI = new GoogleGenerativeAI(this.#geminiApiKey);
+    this.#genAI = new GoogleGenerativeAI(this.#geminiApiKey!);
   }
 
   getVideoDetails(videoUrl: string | undefined): void {
