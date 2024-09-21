@@ -20,7 +20,6 @@
     "@angular/router": "^18.2.0",
     "@google/generative-ai": "^0.19.0",
     "@ngx-env/builder": "^18.0.1",
-    "googleapis": "^144.0.0",
     "primeng": "^17.18.10",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
