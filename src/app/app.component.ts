@@ -5,11 +5,20 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { take } from 'rxjs';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule, HttpClientModule],
+  imports: [
+    RouterOutlet,
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+    ButtonModule,
+    InputTextModule
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

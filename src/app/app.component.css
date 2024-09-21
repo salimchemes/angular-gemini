@@ -11,12 +11,12 @@
   margin-inline: 20%;
 }
 
-button {
+p-button {
   margin-top: 20px;
 }
 
 input {
-  width: 300px;
+  width: 350px;
 }
 
 .error {

@@ -3,20 +3,22 @@
     <h1>Enter youtube video url</h1>
     <input
       type="text"
+      pInputText
       [(ngModel)]="videoUrl"
       placeholder="Enter youtube video url"
     />
-    <button
+    <p-button
       type="submit"
       [disabled]="isLoading()"
       (click)="getVideoDetails(videoUrl())"
     >
       Get description
-    </button>
+    </p-button>
     @if(isLoading()){
     <p class="loading">Generating description from youtube video...</p>
     } @else if(generatedDescription()){
-    <p>Generated Description: {{ generatedDescription() }}</p>
+    <p>{{ generatedDescription() }}</p>
+    <p><i>Generated description by Gemini</i></p>
     } @if(error()){
     <p class="error">{{ error() }}</p>
     }
