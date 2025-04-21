@@ -73,7 +73,7 @@ export class AppComponent implements OnInit {
       input: `Generate a description for a YouTube video with the title: "${title}" and the following description: "${originalDescription}"`,
     };
     this.#genAI
-      ?.getGenerativeModel({ model: 'gemini-pro' })
+      ?.getGenerativeModel({ model: 'models/gemini-1.5-pro-001' })
       .generateContent(prompt.input)
       .then((response: any) => {
         this.generatedDescription.set(
